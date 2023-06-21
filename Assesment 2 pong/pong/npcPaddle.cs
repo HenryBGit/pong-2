@@ -32,14 +32,27 @@ namespace pong
         public void npcMove()
         {
             //position.Y += speed.Y;
-            position.Y += random.Next(-10, 11);
+            position.Y += 20;
             speed.Y = 50;
+            side()
         }
         public void npcMove2()
         {
             //position.Y -= speed.Y;
-            position.Y += random.Next(-10, 11);
+            position.Y -= 0;
             speed.Y = 50;
+            side()
+        }
+        public void side()
+        {
+            if (position.Y < 0)
+            {
+                position.Y = 0;
+            }
+            if (position.Y + 50 > clientSize.Height)
+            {
+                position.Y = clientSize.Height;
+            }
         }
     }
 }
